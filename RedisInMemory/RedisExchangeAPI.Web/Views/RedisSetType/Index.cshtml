@@ -1,0 +1,12 @@
+﻿@model HashSet<string>
+
+<form asp-action="Add" asp-controller="RedisSetType" method="post">
+    <input type="text" name="name" />
+    <button type="submit"> kaydet </button>
+</form>
+
+@foreach (var item in Model)
+{
+    <h1> @item </h1>
+    <a asp-action="DeleteItem" asp-route-name="@item">Sil</a>
+}

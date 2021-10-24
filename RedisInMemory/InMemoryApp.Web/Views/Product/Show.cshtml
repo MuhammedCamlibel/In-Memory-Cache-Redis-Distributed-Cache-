@@ -1,0 +1,18 @@
+﻿@{
+    var p = ViewBag.product as Product;
+    
+ }
+
+
+<h1> @ViewBag.zaman </h1>
+<h2> @ViewBag.callback </h2>
+<ul>
+    <li> @p.Id </li>
+    <li> @p.Name </li>
+    <li> @p.Price </li>
+</ul>
+
+@foreach (var item in ViewBag.List)
+{
+    <p> @item.Name </p>
+}

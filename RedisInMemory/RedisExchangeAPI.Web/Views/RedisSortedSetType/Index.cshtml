@@ -1,0 +1,19 @@
+﻿@model HashSet<string>
+
+
+    <form asp-action="Add"  method="post">
+
+        <input type="text" name="name"  />
+        <input type="number" name="score"  />
+        <button type="submit"> Ekle </button>
+
+
+    </form>
+
+    <hr />
+
+@foreach (var item in Model)
+{
+    <h1> @item </h1>
+    <a asp-action="DeleteItem" asp-route-name="@item"> Sil </a>
+}

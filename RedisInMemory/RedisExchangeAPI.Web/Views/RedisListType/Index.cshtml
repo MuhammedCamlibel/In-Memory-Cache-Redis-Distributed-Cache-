@@ -1,0 +1,20 @@
+﻿@model List<string>
+
+
+<form asp-action="AddList" method="post">
+    <input type="text" name="name" />
+    <button type="submit">Kaydet</button>
+</form>
+
+<a asp-action="DeleteFirstItem">bastan sil</a>
+
+@foreach (var name in Model)
+{
+    <h3> @name </h3>
+    @*<form asp-action="DeleteItem" asp-controller="RedisListType">
+            <input type="hidden" name="name" value="@name" />
+            <button type="submit"> Sil</button>
+        </form>*@
+
+    <a asp-action="DeleteItem" asp-controller="RedisListType" asp-route-name="@name"> sil </a>
+}
